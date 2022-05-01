@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('5b1746bdcc136d9bea17795bb647b816');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '김정택♥오지원 초대합니다',
+        description: '저희, 결혼합니다♡',
+        imageUrl:
+          'https://postfiles.pstatic.net/MjAyMjA1MDFfMjI5/MDAxNjUxNDA5NjgyODMw.KAu46nTx2y8i9wFw69YZQWH5vj809hPy_elUYE-nX0Ig.x9IF3qV_LwYJ616hFBBkOA7VjHWiDy7VsC5GwQqWxuwg.JPEG.ekseks1215/10.jpg?type=w580',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: '사진클릭시 PC 주소',
+        },
+      },
+      social: {
+        likeCount: 좋아요 수, //99999가 최대입니다
+        commentCount: 댓글 수, //99999가 최대입니다
+        sharedCount: 공유 수, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '모바일 청첩장 보기',
+          link: {
+            mobileWebUrl: 'https://kimtaekohwon.modoo.at',
+            webUrl: 'https://kimtaekohwon.modoo.at',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
